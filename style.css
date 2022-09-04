@@ -1,0 +1,273 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ff6347;
+}
+
+body,
+input,
+button {
+    font-family: "Open Sans", sans-serif;
+}
+
+input,
+button {
+    font-size: 16px;
+}
+
+.head_bar {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    color: white;
+}
+
+main {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.edit_section {
+    max-width: 400px;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    visibility: hidden;
+}
+
+.cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+}
+
+#notification {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    text-align: center;
+    color: var(--main-color);
+}
+
+#notification > button {
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
+}
+
+.margin-y-8 {
+    margin: 8px 0;
+}
+
+.margin-y-16 {
+    margin: 16px 0;
+}
+
+.red {
+    background-color: red !important;
+    color: white;
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #fff6f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.input_section > h2 {
+    text-align: center;
+    color: var(--main-color);
+}
+
+.input_section > form > .input {
+    margin: 8px 0;
+}
+
+.input_section > form > button {
+    background-color: var(--main-color);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.input_section > form > button > span {
+    font-weight: bold;
+}
+
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+
+.input_section > form > .input > label {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+    color: var(--main-color);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.book_shelf {
+    margin: 16px 0 0 0;
+    background-color: #fff6f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.book_shelf > h2 {
+    color: var(--main-color);
+    text-align: center;
+}
+
+.book_shelf > .book_list {
+    padding: 16px;
+}
+
+.book_shelf > .book_list > .book_item {
+    padding: 8px 16px 16px 16px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book_shelf > .book_list > .book_item > .data > h3,
+p {
+    color: var(--main-color);
+    margin: 8px 0;
+}
+
+.action {
+    display: flex;
+}
+
+.action > button {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+}
+
+.check {
+    background: url("assets/reg-check.svg");
+    background-size: cover;
+}
+
+.check:hover {
+    background: url("assets/solid-check.svg");
+}
+
+.edit {
+    background: url("assets/reg-pen.svg");
+    background-size: cover;
+}
+
+.edit:hover {
+    background: url("assets/solid-pen.svg");
+}
+
+.delete {
+    background: url("assets/reg-trash.svg");
+    background-size: cover;
+}
+
+.delete:hover {
+    background: url("assets/solid-trash.svg");
+}
+
+.undo {
+    background: url("assets/reg-undo.svg");
+    background-size: cover;
+}
+
+.undo:hover {
+    background: url("assets/solid-undo.svg");
+}
+
+footer {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+
+footer > p {
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .book_shelf > .book_list > .book_item > .data > h3,
+    p {
+        text-align: center;
+    }
+    .book_shelf > .book_list > .book_item {
+        flex-direction: column;
+    }
+    .action {
+        margin-top: 10px;
+    }
+}
