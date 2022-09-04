@@ -168,11 +168,13 @@ function saveBookToLocal() {
 function loadBooksFromLocal() {
     const loadBooksComplete = JSON.parse(localStorage.getItem(COMPLETE_KEY));
     const loadBooksIncomplete = JSON.parse(localStorage.getItem(INCOMPLETE_KEY));
-    for (let bookComplete of loadBooksComplete) {
-        booksComplete.push(bookComplete);
-    }
-    for (let bookIncomplete of loadBooksIncomplete) {
-        booksIncomplete.push(bookIncomplete);
+    if (loadBooksComplete !== null || booksIncomplete !== null) {
+        for (let bookComplete of loadBooksComplete) {
+            booksComplete.push(bookComplete);
+        }
+        for (let bookIncomplete of loadBooksIncomplete) {
+            booksIncomplete.push(bookIncomplete);
+        }
     }
     document.dispatchEvent(new Event(RENDER_ELEMENT));
 }
