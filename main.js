@@ -168,7 +168,7 @@ function saveBookToLocal() {
 function loadBooksFromLocal() {
     const loadBooksComplete = JSON.parse(localStorage.getItem(COMPLETE_KEY));
     const loadBooksIncomplete = JSON.parse(localStorage.getItem(INCOMPLETE_KEY));
-    if (loadBooksComplete !== null || booksIncomplete !== null) {
+    if (loadBooksComplete !== null || loadBooksIncomplete !== null) {
         for (let bookComplete of loadBooksComplete) {
             booksComplete.push(bookComplete);
         }
@@ -280,7 +280,9 @@ function makeBook(bookObj) {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-    loadBooksFromLocal();
+    if (typeof Storage !== undefined) {
+        loadBooksFromLocal();
+    }
     const inputBookIsComplete = document.querySelector("#inputBookIsComplete");
     inputBookIsComplete.addEventListener("click", function () {
         const bookSubmitSpan = document.querySelector("#bookSubmitSpan");
