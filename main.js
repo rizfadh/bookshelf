@@ -309,11 +309,12 @@ window.addEventListener("DOMContentLoaded", function () {
         toggleFormEditVisibility();
         e.preventDefault();
     });
+    const formSearchBook = document.querySelector("#searchBook");
+    formSearchBook.addEventListener("submit", function (e) {
+        e.preventDefault();
+    });
     const searchBookTitleInput = document.querySelector("#searchBookTitle");
     searchBookTitleInput.addEventListener("input", function () {
         document.dispatchEvent(new Event(RENDER_ELEMENT));
-    });
-    searchBookTitleInput.addEventListener("submit", function(e) {
-        e.preventDefault();
     });
 });
