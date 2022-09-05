@@ -313,4 +313,7 @@ window.addEventListener("DOMContentLoaded", function () {
     searchBookTitleInput.addEventListener("input", function () {
         document.dispatchEvent(new Event(RENDER_ELEMENT));
     });
+    searchBookTitleInput.addEventListener("submit", function(e) {
+        e.preventDefault();
+    });
 });
